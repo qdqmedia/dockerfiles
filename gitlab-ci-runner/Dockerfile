@@ -4,6 +4,9 @@ from        ubuntu:12.04
 maintainer  weisjohn "weis.john@gmail.com"
 
 
+# add deadsnake ppa
+run         apt-add-repository -y ppa:fkrull/deadsnakes
+
 # apt-get deps
 
 run         apt-get update -y
@@ -12,6 +15,8 @@ run         apt-get install -y -q wget
 run         apt-get install -y -q git 
 run         apt-get install -y -q build-essential 
 run         apt-get install -y -q libicu-dev
+run         apt-get install -y -q python-pip
+run         apt-get install -y -q python3.3 python2.7 python2.6 python2.5 python2.4 python3.3-dev python2.7-dev python2.6-dev python2.5-dev python2.4-dev
 
 
 
@@ -30,6 +35,9 @@ run         gem install bundler
 run         git clone https://github.com/Ensequence/gitlab-ci-runner.git gcr && cd gcr
 run         cd gcr && bundle install 
 
+
+# install python related tools
+run         pip install tox coverage
 
 # setup ssh 
 
