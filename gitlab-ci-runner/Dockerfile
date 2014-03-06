@@ -5,6 +5,8 @@ maintainer  weisjohn "weis.john@gmail.com"
 
 
 # add deadsnake ppa
+run         apt-get update -y
+run         apt-get install -y -q python-software-properties
 run         apt-add-repository -y ppa:fkrull/deadsnakes
 
 # apt-get deps
